@@ -1,0 +1,44 @@
+{
+  "Analysis": [
+    {
+      "Arguments": {
+        "C": {
+          "Args": "",
+          "Compiler": "gcc"
+        },
+        "Cpp": {
+          "Args": "",
+          "Compiler": "g++"
+        },
+        "Fortran": {
+          "Args": "",
+          "Compiler": "gfortran"
+        }
+      },
+      "Path": "."
+    }
+  ],
+  "BundledHeaders": {
+    "IncludeLIBC": true,
+    "IncludeOpenMP": true
+  },
+  "Tasks": [
+    {
+      "Command": {
+        "Cwd": "/usa/kjchan/CISC372_HW3/DOTPRODUCT",
+        "Exec": "make"
+      },
+      "Group": "build",
+      "Name": "Main"
+    },
+    {
+      "Command": {
+        "Cwd": "/Users/tcollis/SC18/examples/DOTPRODUCT",
+        "Exec": "env OMP_NUM_THREADS=1 ./dotproduct 10000000 1"
+      },
+      "Group": "run",
+      "Name": "Main"
+    }
+  ],
+  "Version": 1
+}

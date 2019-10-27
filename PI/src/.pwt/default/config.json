@@ -1,0 +1,44 @@
+{
+  "Analysis": [
+    {
+      "Arguments": {
+        "C": {
+          "Args": "",
+          "Compiler": "gcc"
+        },
+        "Cpp": {
+          "Args": "",
+          "Compiler": "g++"
+        },
+        "Fortran": {
+          "Args": "",
+          "Compiler": "gfortran"
+        }
+      },
+      "Path": "."
+    }
+  ],
+  "BundledHeaders": {
+    "IncludeLIBC": true,
+    "IncludeOpenMP": true
+  },
+  "Tasks": [
+    {
+      "Command": {
+        "Cwd": "/usa/kjchan/CISC372_HW3/PI/src",
+        "Exec": "gcc -fopenmp pi.c pi_main.c -o pi -lm"
+      },
+      "Group": "build",
+      "Name": "Main"
+    },
+    {
+      "Command": {
+        "Cwd": "/usa/kjchan/CISC372_HW3/PI/src",
+        "Exec": "env OMP_NUM_THREADS=8 ./pi 50000"
+      },
+      "Group": "run",
+      "Name": "Main"
+    }
+  ],
+  "Version": 1
+}

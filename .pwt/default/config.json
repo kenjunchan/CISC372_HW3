@@ -1,0 +1,44 @@
+{
+  "Analysis": [
+    {
+      "Arguments": {
+        "C": {
+          "Args": "",
+          "Compiler": "gcc"
+        },
+        "Cpp": {
+          "Args": "",
+          "Compiler": "g++"
+        },
+        "Fortran": {
+          "Args": "",
+          "Compiler": "gfortran"
+        }
+      },
+      "Path": "."
+    }
+  ],
+  "BundledHeaders": {
+    "IncludeLIBC": true,
+    "IncludeOpenMP": true
+  },
+  "Tasks": [
+    {
+      "Command": {
+        "Cwd": "/usa/kjchan/CISC372_HW3",
+        "Exec": "gcc -fopenmp helloworld-omp.c -o helloworld"
+      },
+      "Group": "build",
+      "Name": "Main"
+    },
+    {
+      "Command": {
+        "Cwd": "/usa/kjchan/CISC372_HW3",
+        "Exec": "env OMP_NUM_THREADS=10 ./helloworld"
+      },
+      "Group": "run",
+      "Name": "Main"
+    }
+  ],
+  "Version": 1
+}
